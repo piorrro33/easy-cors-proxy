@@ -20,6 +20,10 @@
     "ALLOW_HEADERS": {
       "description": "The HTTP Headers you want to allow. Multiple values separated by comma.",
       "value": "X-Requested-With"
+    },
+    "ALLOW_CREDENTIALS": {
+      "description": "Self explanatory.",
+      "value": "true"
     }
   }
 }
