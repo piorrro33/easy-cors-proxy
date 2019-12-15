@@ -14,7 +14,7 @@ http.createServer(function (req, res) {
 
   // Add CORS Headers
   r.on('response', function(_r) {
-    _r.statusCode = 302;
+    _r.statusCode = 200;
     _r.headers['Access-Control-Allow-Origin'] = allowOrigin;
     _r.headers['Access-Control-Allow-Methods'] = allowMethods;
     _r.headers['Access-Control-Allow-Headers'] = allowHeaders;
