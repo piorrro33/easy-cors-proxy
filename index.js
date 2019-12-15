@@ -6,7 +6,8 @@ var port = process.env.PORT || 8000,
     proxyURL = process.env.PROXY_URL || 'http://registry.npmjs.org:80/',
     allowOrigin = process.env.ALLOW_ORIGIN || '*',
     allowMethods = process.env.ALLOW_METHODS || '*',
-    allowHeaders = process.env.ALLOW_HEADERS || 'X-Requested-With'
+    allowHeaders = process.env.ALLOW_HEADERS || 'X-Requested-With',
+    allowCredentials = process.env.ALLOW_CREDENTIALS || 'true'
 
 http.createServer(function (req, res) {
   var r = request(url.resolve(proxyURL, req.url));
@@ -16,6 +17,7 @@ http.createServer(function (req, res) {
     _r.headers['Access-Control-Allow-Origin'] = allowOrigin;
     _r.headers['Access-Control-Allow-Methods'] = allowMethods;
     _r.headers['Access-Control-Allow-Headers'] = allowHeaders;
+    _r.headers['Access-Control-Allow-Credentials'] = allowCredentials;
   });
 
   // Stream the response
